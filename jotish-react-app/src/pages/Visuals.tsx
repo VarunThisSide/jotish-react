@@ -13,6 +13,7 @@ import {
   Geography,
   Marker
 } from "react-simple-maps";
+import BackButton from "@/components/BackButton";
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
@@ -127,6 +128,7 @@ export default function Visuals() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden bg-slate-950 text-white font-sans">
+        <BackButton/>
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
             <Meteors number={40} /> 
         </div>

@@ -3,6 +3,8 @@ import { Meteors } from "../components/ui/meteors";
 import { CometCard } from "@/components/ui/comet-card";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import BackButton from "@/components/BackButton";
+import VisualsButton from "@/components/VisualsButton";
 
 export default function List() {
     const navigate=useNavigate()
@@ -32,9 +34,10 @@ export default function List() {
     },[])
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden bg-slate-950">
+        <VisualsButton/>
 
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <Meteors number={400} /> 
+        <Meteors number={600} /> 
         </div>
 
       <div className="relative z-10 flex flex-col items-center py-20 px-4">

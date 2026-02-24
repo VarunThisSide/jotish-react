@@ -4,6 +4,7 @@ import { useRef, useState, useCallback } from "react";
 import { Boxes } from "../components/ui/background-boxes";
 import { cn } from "@/lib/utils";
 import Webcam from "react-webcam";
+import BackButton from "@/components/BackButton";
 
 export default function Details() {
     const navigate = useNavigate();
@@ -37,6 +38,7 @@ export default function Details() {
 
     return (
         <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
+            <BackButton/>
             <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
             <Boxes />
@@ -98,7 +100,7 @@ export default function Details() {
                 </CardSpotlight>
                 <button 
                         onClick={() => setIsCameraOpen(true)}
-                        className="z-100 absolute top-10 p-4 w-60 max-w-md py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-lg shadow-lg shadow-indigo-500/30 transition-all active:scale-95"
+                        className="cursor-pointer z-100 absolute top-10 p-4 w-60 max-w-md py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-lg shadow-lg shadow-indigo-500/30 transition-all active:scale-95"
                     >
                         Click picture
                 </button>
@@ -106,7 +108,7 @@ export default function Details() {
 
             {isCameraOpen && (
                 <div className="absolute z-100 w-full max-w-md flex flex-col items-center animate-in fade-in zoom-in-95 duration-300">
-                    <h2 className="text-2xl font-bold text-white mb-4">Position ID in Frame</h2>
+                    <h2 className="text-2xl font-bold text-white mb-4">Place your face in Frame</h2>
                     
                     {/* The react-webcam Component */}
                     <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-black border-2 border-slate-700 shadow-2xl mb-6">
@@ -126,15 +128,15 @@ export default function Details() {
                     <div className="flex gap-4 w-full">
                         <button 
                             onClick={() => setIsCameraOpen(false)}
-                            className="flex-1 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-lg border border-slate-700 transition-all active:scale-95"
+                            className="cursor-pointer flex-1 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-lg border border-slate-700 transition-all active:scale-95"
                         >
                             Cancel
                         </button>
                         <button 
                             onClick={capturePhoto}
-                            className="flex-1 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg shadow-lg shadow-emerald-500/30 transition-all active:scale-95"
+                            className="cursor-pointer flex-1 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg shadow-lg shadow-emerald-500/30 transition-all active:scale-95"
                         >
-                            📸 Snap!
+                            Capture
                         </button>
                     </div>
                 </div>

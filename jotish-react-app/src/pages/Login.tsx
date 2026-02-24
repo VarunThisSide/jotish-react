@@ -12,7 +12,8 @@ export default function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = () => {
+  const handleSubmit = (e : React.FormEvent) => {
+    e.preventDefault()
     if(username === "testuser" && password === "Test123"){
       navigate('/list')
     }else{
