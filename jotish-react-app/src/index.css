@@ -141,33 +141,3 @@
     @apply bg-background text-foreground;
     }
 }
-
-
-/* Hide the real cursor globally */
-html, body {
-  cursor: none;
-}
-
-.custom-cursor {
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none; /* Crucial: clicks go THROUGH the cursor */
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition: width 0.2s, height 0.2s; /* Optional: adds a nice pop effect */
-}
-
-.cursor-glow {
-  width: 60px; /* Slightly larger for better effect */
-  height: 60px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  /* This transition creates the "trailing" effect */
-  transition: transform 0.15s ease-out; 
-}
